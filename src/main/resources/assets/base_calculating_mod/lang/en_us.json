@@ -1,0 +1,11 @@
+{
+  "item.base_calculating_mod.converter_block": "Converter Block",
+  "gui.base_calculating_mod.converter_block_gui.converterFirstBaseSlider_prefix": "",
+  "gui.base_calculating_mod.converter_block_gui.button_convert": "Convert",
+  "gui.base_calculating_mod.converter_block_gui.converterTextField": "enter number",
+  "gui.base_calculating_mod.converter_block_gui.converterFirstBaseSlider_suffix": "",
+  "gui.base_calculating_mod.converter_block_gui.CnoverterSecondBaseSlider_prefix": "",
+  "gui.base_calculating_mod.converter_block_gui.CnoverterSecondBaseSlider_suffix": "",
+  "gui.base_calculating_mod.converter_block_gui.converterSecondBaseSlider_suffix": "",
+  "gui.base_calculating_mod.converter_block_gui.converterSecondBaseSlider_prefix": ""
+}

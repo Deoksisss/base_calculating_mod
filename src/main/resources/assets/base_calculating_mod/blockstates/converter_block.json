@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "base_calculating_mod:block/converter_block"
+    },
+    "powered=true": {
+      "model": "base_calculating_mod:block/converter_block_down"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "base_calculating_mod",
+  "version": "1.0.0",
+  "name": "Base calculating mod",
+  "authors": [
+    "MCreator"
+  ],
+  "contact": {
+    "homepage": "https://mcreator.net",
+    "sources": ""
+  },
+  "license": "Not specified",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.mcreator.basecalculatingmod.BaseCalculatingModMod"
+    ],
+    "client": [
+      "net.mcreator.basecalculatingmod.BaseCalculatingModModClient"
+    ]
+  },
+  "mixins": [
+    "base_calculating_mod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.17.2",
+    "minecraft": "~1.21.8",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
