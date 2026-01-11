@@ -2,6 +2,8 @@ package BaseConverterLogic;
 
 import net.mcreator.basecalculatingmod.BaseCalculatingModMod;
 
+import static net.mcreator.basecalculatingmod.BaseCalculatingModMod.ALPHABET;
+
 public class ConverterCore {
 
     public static String convertFromDecimal(String number, Integer outputBase){
@@ -11,7 +13,7 @@ public class ConverterCore {
         while (n > 0) {
             d = n % outputBase;
             n = n / outputBase;
-            outputNumber.append(BaseCalculatingModMod.ALPHABET.charAt(d));
+            outputNumber.append(ALPHABET.charAt(d));
         }
         return outputNumber.reverse().toString();
     }
@@ -21,7 +23,7 @@ public class ConverterCore {
         int len = number.length()-1;
         int outputNumber = 0;
         for (int i = 0; i < number.length(); i++){
-            int currentNumber = BaseCalculatingModMod.ALPHABET.indexOf(number.charAt(i));
+            int currentNumber = ALPHABET.indexOf(number.charAt(i));
             outputNumber += currentNumber*((int) Math.pow(inputBase, len-i));
         }
 
