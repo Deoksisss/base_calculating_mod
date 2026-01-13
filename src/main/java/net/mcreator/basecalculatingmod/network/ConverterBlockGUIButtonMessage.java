@@ -38,7 +38,7 @@ public record ConverterBlockGUIButtonMessage(int buttonID, int x, int y, int z) 
 			return;
 		if (buttonID == 0) {
 
-			ConverterBlockCoreProcedureProcedure.execute(entity);
+			ConverterBlockCoreProcedureProcedure.execute(world, entity);
 		}
 	}
 }

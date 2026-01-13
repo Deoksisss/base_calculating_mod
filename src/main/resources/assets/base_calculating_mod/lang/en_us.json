@@ -7,5 +7,8 @@
   "gui.base_calculating_mod.converter_block_gui.CnoverterSecondBaseSlider_prefix": "",
   "gui.base_calculating_mod.converter_block_gui.CnoverterSecondBaseSlider_suffix": "",
   "gui.base_calculating_mod.converter_block_gui.converterSecondBaseSlider_suffix": "",
-  "gui.base_calculating_mod.converter_block_gui.converterSecondBaseSlider_prefix": ""
+  "gui.base_calculating_mod.converter_block_gui.converterSecondBaseSlider_prefix": "",
+  "item.base_calculating_mod.calculator_block": "Calculator Block",
+  "gui.base_calculating_mod.calculator_gui.button_calculate": "Calculate",
+  "gui.base_calculating_mod.calculator_gui.calcField": "e: 10@2+12@10*2@3"
 }

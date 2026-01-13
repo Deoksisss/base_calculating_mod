@@ -3,7 +3,7 @@ package BaseCalculatorLogic.Tokens;
 import java.util.ArrayList;
 import java.util.List;
 
-import static tools.NumberToNumberWithBase.toNumberWithBase;
+import static tools.NumberNumberWithBaseConverter.toNumberWithBase;
 
 public class Tokenizer {
     public static List<Token> tokenizeExpression(String expression) {

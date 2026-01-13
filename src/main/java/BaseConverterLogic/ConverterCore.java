@@ -7,6 +7,7 @@ import static net.mcreator.basecalculatingmod.BaseCalculatingModMod.ALPHABET;
 public class ConverterCore {
 
     public static String convertFromDecimal(String number, Integer outputBase){
+        //explains.append("\\n");
         int n = Integer.parseInt(number);
         int d;
         StringBuilder outputNumber = new StringBuilder();
@@ -14,6 +15,8 @@ public class ConverterCore {
             d = n % outputBase;
             n = n / outputBase;
             outputNumber.append(ALPHABET.charAt(d));
+
+            //explains.append(String.format(""));
         }
         return outputNumber.reverse().toString();
     }

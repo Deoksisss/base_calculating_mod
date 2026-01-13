@@ -38,16 +38,52 @@
       "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "converter_block_core_procedure",
+      "registry_name": "converter_block_core",
       "metadata": {
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ],
         "files": [
           "src/main/java/net/mcreator/basecalculatingmod/procedures/ConverterBlockCoreProcedureProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "CalculatorBlock",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "calculator_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/base_calculating_mod/items/calculator_block.json",
+          "src/main/resources/assets/base_calculating_mod/models/item/calculator_block.json",
+          "src/main/resources/assets/base_calculating_mod/blockstates/calculator_block.json",
+          "src/main/resources/data/base_calculating_mod/loot_table/blocks/calculator_block.json",
+          "src/main/java/net/mcreator/basecalculatingmod/block/CalculatorBlockBlock.java",
+          "src/main/java/net/mcreator/basecalculatingmod/block/entity/CalculatorBlockBlockEntity.java",
+          "src/main/resources/assets/base_calculating_mod/models/block/calculator_block.json",
+          "src/main/resources/assets/base_calculating_mod/models/block/calculator_block_down.json"
+        ]
+      }
+    },
+    {
+      "name": "CalculatorGUI",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "calculator_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/basecalculatingmod/client/gui/CalculatorGUIScreen.java",
+          "src/main/java/net/mcreator/basecalculatingmod/world/inventory/CalculatorGUIMenu.java"
         ]
       }
     }
@@ -56,6 +92,7 @@
   "sound_elements": [],
   "tag_elements": {
     "BLOCKS:minecraft:pressure_plates": [
+      "~CUSTOM:CalculatorBlock",
       "~CUSTOM:ConverterBlock"
     ]
   },
@@ -70,7 +107,10 @@
       "gui.base_calculating_mod.converter_block_gui.CnoverterSecondBaseSlider_prefix": "",
       "gui.base_calculating_mod.converter_block_gui.CnoverterSecondBaseSlider_suffix": "",
       "gui.base_calculating_mod.converter_block_gui.converterSecondBaseSlider_suffix": "",
-      "gui.base_calculating_mod.converter_block_gui.converterSecondBaseSlider_prefix": ""
+      "gui.base_calculating_mod.converter_block_gui.converterSecondBaseSlider_prefix": "",
+      "item.base_calculating_mod.calculator_block": "Calculator Block",
+      "gui.base_calculating_mod.calculator_gui.button_calculate": "Calculate",
+      "gui.base_calculating_mod.calculator_gui.calcField": "e: 10@2+12@10*2@3"
     }
   },
   "metadata": {

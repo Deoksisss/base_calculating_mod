@@ -15,6 +15,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.basecalculatingmod.client.gui.ConverterBlockGUIScreen;
+import net.mcreator.basecalculatingmod.client.gui.CalculatorGUIScreen;
 
 import net.fabricmc.api.Environment;
 import net.fabricmc.api.EnvType;
@@ -25,6 +26,7 @@ import java.text.DecimalFormat;
 public class BaseCalculatingModModScreens {
 	public static void clientLoad() {
 		MenuScreens.register(BaseCalculatingModModMenus.CONVERTER_BLOCK_GUI, ConverterBlockGUIScreen::new);
+		MenuScreens.register(BaseCalculatingModModMenus.CALCULATOR_GUI, CalculatorGUIScreen::new);
 	}
 
 	public interface FabricScreenAccessor {

@@ -4,7 +4,7 @@ import BaseCalculatorLogic.Tokens.NumberWithBase;
 
 import static net.mcreator.basecalculatingmod.BaseCalculatingModMod.ALPHABET;
 
-public class NumberToNumberWithBase {
+public class NumberNumberWithBaseConverter {
 
     private static boolean isValid(String number) {
         int atIndex = number.indexOf('@');
@@ -87,5 +87,12 @@ public class NumberToNumberWithBase {
 
         return new NumberWithBase(number, scale, base);
 
+    }
+
+    public static String toNumber(NumberWithBase number) {
+        String value = number.number();
+        int scale = number.scale();
+        int base = number.base();
+        return value.substring(0,scale) + "," + value.substring(scale) + "@" + base;
     }
 }

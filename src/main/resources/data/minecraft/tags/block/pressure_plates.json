@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "base_calculating_mod:calculator_block",
     "base_calculating_mod:converter_block"
   ]
 }
