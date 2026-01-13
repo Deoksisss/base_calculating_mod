@@ -1,4 +1,5 @@
 package tools;
+
 import static net.mcreator.basecalculatingmod.BaseCalculatingModMod.ALPHABET;
 
 public class NumberTools {
@@ -35,4 +36,5 @@ public class NumberTools {
         }
         return sb.toString();
     }
+
 }

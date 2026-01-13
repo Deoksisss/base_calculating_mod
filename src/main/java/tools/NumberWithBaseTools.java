@@ -1,12 +1,12 @@
 package tools;
 
-import BaseCalculatorLogic.NumberWithBase;
+import BaseCalculatorLogic.Tokens.NumberWithBase;
 import BaseConverterLogic.Converter;
 
 import static AltCodeGenerator.NumberCoderCore.getAbsFromAltCode;
 import static AltCodeGenerator.NumberCoderCore.toAltCode;
 
-public class NumverWithBaseTools {
+public class NumberWithBaseTools {
 
     public static NumberWithBase toBase(NumberWithBase number, int currentBase) {
         return number.base() == currentBase

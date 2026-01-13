@@ -1,12 +1,12 @@
 package BaseCalculatorLogic;
 
-import net.mcreator.basecalculatingmod.BaseCalculatingModMod;
+import BaseCalculatorLogic.Tokens.NumberWithBase;
 
 import static AltCodeGenerator.NumberCoderCore.getAbsFromAltCode;
 import static AltCodeGenerator.NumberCoderCore.toAltCode;
 import static net.mcreator.basecalculatingmod.BaseCalculatingModMod.ALPHABET;
 import static tools.NumberTools.isNegative;
-import static tools.NumverWithBaseTools.*;
+import static tools.NumberWithBaseTools.*;
 
 public class CalculatorCore {
 

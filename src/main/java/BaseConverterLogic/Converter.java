@@ -1,7 +1,5 @@
 package BaseConverterLogic;
 
-import BaseCalculatorLogic.NumberWithBase;
-
 public class Converter {
 
     public static String convert(String number, int inputBase, int outputBase) {

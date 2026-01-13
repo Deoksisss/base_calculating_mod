@@ -1,6 +1,5 @@
 package net.mcreator.basecalculatingmod.procedures;
 
-import BaseCalculatorLogic.NumberWithBase;
 import BaseConverterLogic.Converter;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
