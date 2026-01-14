@@ -83,7 +83,26 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/basecalculatingmod/client/gui/CalculatorGUIScreen.java",
+          "src/main/java/net/mcreator/basecalculatingmod/network/CalculatorGUIButtonMessage.java",
           "src/main/java/net/mcreator/basecalculatingmod/world/inventory/CalculatorGUIMenu.java"
+        ]
+      }
+    },
+    {
+      "name": "CalculatorBlockCore",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "calculator_block_core",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/basecalculatingmod/procedures/CalculatorBlockCoreProcedure.java"
         ]
       }
     }

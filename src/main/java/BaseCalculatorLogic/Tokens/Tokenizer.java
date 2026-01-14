@@ -10,7 +10,7 @@ public class Tokenizer {
         expression = expression.replace("-","+-");
         List<Token> tokens = new ArrayList<>();
         String[] multiLevel = expression.split("(?=[*+])|(?<=[*+])");
-        for (int i = 0; i <= multiLevel.length; i++) {
+        for (int i = 0; i < multiLevel.length; i++) {
             if (multiLevel[i].isEmpty()) continue;
 
             switch (multiLevel[i]) {

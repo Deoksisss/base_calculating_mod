@@ -13,7 +13,7 @@ import static tools.NumberNumberWithBaseConverter.toNumber;
 
 public class Calculator {
 
-    public static String Calculate(String expression) {
+    public static String calculate(String expression) {
         List<Token> tokens = tokenizeExpression(expression);
         List<Token> firstRound = new ArrayList<>();
         for (int i = 0; i < tokens.size(); i++) {
@@ -31,16 +31,24 @@ public class Calculator {
             }
         }
 
-        NumberWithBase result = ((NumberToken) firstRound.get(0)).getNumber();
+        NumberWithBase result = null;
+        OperatorToken pendingOp = null;
 
-        for (int i = 0; i < firstRound.size(); i++) {
-            OperatorToken op = (OperatorToken) firstRound.get(i);
-            NumberToken next = (NumberToken) firstRound.get(++i);
-
-            if (op.getOperator() == Operator.ADD) {
-                result = sum(result,next.getNumber());
+        for (Token token : firstRound) {
+            if (token instanceof NumberToken numToken) {
+                if (result == null) {
+                    result = numToken.getNumber();
+                } else if (pendingOp != null) {
+                    if (pendingOp.getOperator() == Operator.ADD) {
+                        result = sum(result, numToken.getNumber());
+                    }
+                    pendingOp = null;
+                }
+            } else if (token instanceof OperatorToken opToken) {
+                pendingOp = opToken;
             }
         }
+
 
         return toNumber(result);
     }

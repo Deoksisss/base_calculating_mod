@@ -38,9 +38,9 @@ public class CalculatorCore {
             sb.append(ALPHABET.charAt(d % currentBase));
         }
 
-        if (carry != 0) {
-            sb.append(ALPHABET.charAt(carry));
-        }
+        //if (carry != 0) {
+        //    sb.append(ALPHABET.charAt(carry));
+        //}
 
         return new NumberWithBase(sb.reverse().toString(), maxScale, currentBase);
     }

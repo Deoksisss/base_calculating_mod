@@ -1,1 +1,2 @@
 /give Player161 base_calculating_mod:converter_block
+/give Player594 base_calculating_mod:calculator_block

@@ -93,6 +93,13 @@ public class NumberNumberWithBaseConverter {
         String value = number.number();
         int scale = number.scale();
         int base = number.base();
-        return value.substring(0,scale) + "," + value.substring(scale) + "@" + base;
+
+        if (scale == 0) {
+            return value + "@" + base; // целое число
+        } else {
+            int intPartLength = value.length() - scale;
+            return value.substring(0, intPartLength) + "," + value.substring(intPartLength) + "@" + base;
+        }
     }
+
 }
