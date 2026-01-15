@@ -3,7 +3,7 @@ package BaseCalculatorLogic;
 import BaseCalculatorLogic.Tokens.NumberWithBase;
 
 import static AltCodeGenerator.NumberCoderCore.getAbsFromAltCode;
-import static AltCodeGenerator.NumberCoderCore.toAltCode;
+import static AltCodeGenerator.NumberCoderCore.toAdditionalCode;
 import static net.mcreator.basecalculatingmod.BaseCalculatingModMod.ALPHABET;
 import static tools.NumberTools.isNegative;
 import static tools.NumberWithBaseTools.*;
@@ -15,15 +15,22 @@ public class CalculatorCore {
         int carry = 0;
         int s, f, d;
         int currentBase = Math.max(fOperand.base(), sOperand.base());
-
-        fOperand = toAltCode(toBase(fOperand, currentBase));
-        sOperand = toAltCode(toBase(sOperand, currentBase));
-
         int maxScale = Math.max(fOperand.scale(), sOperand.scale());
-        int maxIntLen = Math.max(fOperand.number().length()-maxScale, sOperand.number().length()-maxScale);
 
-        fOperand = normalize(fOperand, maxScale, maxIntLen);
-        sOperand = normalize(sOperand, maxScale, maxIntLen);
+        fOperand = toBase(fOperand, currentBase);
+        sOperand = toBase(sOperand, currentBase);
+        System.out.println(fOperand.number() + " " + fOperand.scale() + " " + fOperand.base() + " " + sOperand.number() + " " + sOperand.scale() + " " + sOperand.base());
+
+        int maxIntLen = Math.max(
+                fOperand.number().length() - fOperand.scale(),
+                sOperand.number().length() - sOperand.scale()
+        );
+
+        fOperand = normalize(fOperand, maxScale, maxIntLen+1);
+        sOperand = normalize(sOperand, maxScale, maxIntLen+1);
+
+        fOperand = toAdditionalCode(fOperand);
+        sOperand = toAdditionalCode(sOperand);
 
         String firstNumber = fOperand.number();
         String secondNumber = sOperand.number();
@@ -38,10 +45,6 @@ public class CalculatorCore {
             sb.append(ALPHABET.charAt(d % currentBase));
         }
 
-        //if (carry != 0) {
-        //    sb.append(ALPHABET.charAt(carry));
-        //}
-
         return new NumberWithBase(sb.reverse().toString(), maxScale, currentBase);
     }
 
@@ -51,8 +54,8 @@ public class CalculatorCore {
         NumberWithBase current = new NumberWithBase("0", 0, currentBase);
         NumberWithBase currentNumber;
 
-        fOperand = toAltCode(toBase(fOperand, currentBase));
-        sOperand = toAltCode(toBase(sOperand, currentBase));
+        fOperand = toAdditionalCode(toBase(fOperand, currentBase));
+        sOperand = toAdditionalCode(toBase(sOperand, currentBase));
 
         boolean isNegative = isNegative(fOperand.number(), sOperand.number(), currentBase);
 

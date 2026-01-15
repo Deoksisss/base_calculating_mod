@@ -12,6 +12,7 @@ import net.fabricmc.api.EnvType;
 public class BaseCalculatingModModBlocksRenderers {
 	public static void clientLoad() {
 		CalculatorBlockBlock.registerRenderLayer();
+		NumberCoderBlock.registerRenderLayer();
 	}
 	// Start of user code block custom block renderers
 	// End of user code block custom block renderers

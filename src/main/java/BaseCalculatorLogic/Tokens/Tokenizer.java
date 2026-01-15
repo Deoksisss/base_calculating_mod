@@ -7,7 +7,7 @@ import static tools.NumberNumberWithBaseConverter.toNumberWithBase;
 
 public class Tokenizer {
     public static List<Token> tokenizeExpression(String expression) {
-        expression = expression.replace("-","+-");
+        expression = expression.replaceAll("(?<!\\*)-", "+-");
         List<Token> tokens = new ArrayList<>();
         String[] multiLevel = expression.split("(?=[*+])|(?<=[*+])");
         for (int i = 0; i < multiLevel.length; i++) {

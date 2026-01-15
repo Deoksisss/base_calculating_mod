@@ -10,5 +10,10 @@
   "gui.base_calculating_mod.converter_block_gui.converterSecondBaseSlider_prefix": "",
   "item.base_calculating_mod.calculator_block": "Calculator Block",
   "gui.base_calculating_mod.calculator_gui.button_calculate": "Calculate",
-  "gui.base_calculating_mod.calculator_gui.calcField": "e: 10@2+12@10*2@3"
+  "gui.base_calculating_mod.calculator_gui.calcField": "e: 10@2+12@10*2@3",
+  "gui.base_calculating_mod.number_coder_block.button_to_direct": "to direct",
+  "gui.base_calculating_mod.number_coder_block.coderField": "e: 10@12",
+  "gui.base_calculating_mod.number_coder_block.label_cpureprodector_3000_2026": "CPU coder 3000",
+  "gui.base_calculating_mod.number_coder_block.button_to_additional": "to additional",
+  "gui.base_calculating_mod.number_coder_block.button_to_reverse": "to reverse"
 }

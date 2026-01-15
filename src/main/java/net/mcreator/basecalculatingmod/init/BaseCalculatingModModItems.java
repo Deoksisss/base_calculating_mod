@@ -18,10 +18,12 @@ import java.util.function.Function;
 public class BaseCalculatingModModItems {
 	public static Item CONVERTER_BLOCK;
 	public static Item CALCULATOR_BLOCK;
+	public static Item NUMBER_CODER;
 
 	public static void load() {
 		CONVERTER_BLOCK = block(BaseCalculatingModModBlocks.CONVERTER_BLOCK, "converter_block");
 		CALCULATOR_BLOCK = block(BaseCalculatingModModBlocks.CALCULATOR_BLOCK, "calculator_block");
+		NUMBER_CODER = block(BaseCalculatingModModBlocks.NUMBER_CODER, "number_coder");
 	}
 
 	// Start of user code block custom items

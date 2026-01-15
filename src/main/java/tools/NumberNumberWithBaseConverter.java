@@ -95,7 +95,7 @@ public class NumberNumberWithBaseConverter {
         int base = number.base();
 
         if (scale == 0) {
-            return value + "@" + base; // целое число
+            return value + "@" + base;
         } else {
             int intPartLength = value.length() - scale;
             return value.substring(0, intPartLength) + "," + value.substring(intPartLength) + "@" + base;

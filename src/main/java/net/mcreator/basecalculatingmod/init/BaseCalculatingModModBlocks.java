@@ -19,10 +19,12 @@ import java.util.function.Function;
 public class BaseCalculatingModModBlocks {
 	public static Block CONVERTER_BLOCK;
 	public static Block CALCULATOR_BLOCK;
+	public static Block NUMBER_CODER;
 
 	public static void load() {
 		CONVERTER_BLOCK = register("converter_block", ConverterBlockBlock::new);
 		CALCULATOR_BLOCK = register("calculator_block", CalculatorBlockBlock::new);
+		NUMBER_CODER = register("number_coder", NumberCoderBlock::new);
 	}
 
 	// Start of user code block custom blocks

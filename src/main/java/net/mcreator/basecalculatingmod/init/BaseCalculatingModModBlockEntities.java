@@ -19,10 +19,12 @@ import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityT
 public class BaseCalculatingModModBlockEntities {
 	public static BlockEntityType<ConverterBlockBlockEntity> CONVERTER_BLOCK;
 	public static BlockEntityType<CalculatorBlockBlockEntity> CALCULATOR_BLOCK;
+	public static BlockEntityType<NumberCoderBlockEntity> NUMBER_CODER;
 
 	public static void load() {
 		CONVERTER_BLOCK = register("converter_block", BaseCalculatingModModBlocks.CONVERTER_BLOCK, ConverterBlockBlockEntity::new);
 		CALCULATOR_BLOCK = register("calculator_block", BaseCalculatingModModBlocks.CALCULATOR_BLOCK, CalculatorBlockBlockEntity::new);
+		NUMBER_CODER = register("number_coder", BaseCalculatingModModBlocks.NUMBER_CODER, NumberCoderBlockEntity::new);
 	}
 
 	// Start of user code block custom block entities

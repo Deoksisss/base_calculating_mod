@@ -14,6 +14,7 @@ import net.minecraft.client.gui.components.AbstractSliderButton;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.basecalculatingmod.client.gui.NumberCoderBlockScreen;
 import net.mcreator.basecalculatingmod.client.gui.ConverterBlockGUIScreen;
 import net.mcreator.basecalculatingmod.client.gui.CalculatorGUIScreen;
 
@@ -27,6 +28,7 @@ public class BaseCalculatingModModScreens {
 	public static void clientLoad() {
 		MenuScreens.register(BaseCalculatingModModMenus.CONVERTER_BLOCK_GUI, ConverterBlockGUIScreen::new);
 		MenuScreens.register(BaseCalculatingModModMenus.CALCULATOR_GUI, CalculatorGUIScreen::new);
+		MenuScreens.register(BaseCalculatingModModMenus.NUMBER_CODER_BLOCK, NumberCoderBlockScreen::new);
 	}
 
 	public interface FabricScreenAccessor {

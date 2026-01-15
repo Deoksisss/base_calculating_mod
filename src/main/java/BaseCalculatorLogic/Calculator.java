@@ -2,9 +2,11 @@ package BaseCalculatorLogic;
 
 import BaseCalculatorLogic.Tokens.*;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static AltCodeGenerator.NumberCoderCore.fromAdditionalCode;
 import static BaseCalculatorLogic.CalculatorCore.multiply;
 import static BaseCalculatorLogic.CalculatorCore.sum;
 import static BaseCalculatorLogic.Tokens.Tokenizer.tokenizeExpression;
@@ -49,7 +51,9 @@ public class Calculator {
             }
         }
 
-
-        return toNumber(result);
+        if (result != null) {
+            return toNumber(fromAdditionalCode(result));
+        }
+        return "";
     }
 }

@@ -14,6 +14,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.Registry;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.basecalculatingmod.world.inventory.NumberCoderBlockMenu;
 import net.mcreator.basecalculatingmod.world.inventory.ConverterBlockGUIMenu;
 import net.mcreator.basecalculatingmod.world.inventory.CalculatorGUIMenu;
 import net.mcreator.basecalculatingmod.network.MenuStateUpdateMessage;
@@ -28,12 +29,15 @@ import java.util.Map;
 public class BaseCalculatingModModMenus {
 	public static MenuType<ConverterBlockGUIMenu> CONVERTER_BLOCK_GUI;
 	public static MenuType<CalculatorGUIMenu> CALCULATOR_GUI;
+	public static MenuType<NumberCoderBlockMenu> NUMBER_CODER_BLOCK;
 
 	public static void load() {
 		CONVERTER_BLOCK_GUI = register("converter_block_gui", ConverterBlockGUIMenu::new);
 		ConverterBlockGUIMenu.screenInit();
 		CALCULATOR_GUI = register("calculator_gui", CalculatorGUIMenu::new);
 		CalculatorGUIMenu.screenInit();
+		NUMBER_CODER_BLOCK = register("number_coder_block", NumberCoderBlockMenu::new);
+		NumberCoderBlockMenu.screenInit();
 		PayloadTypeRegistry.playC2S().register(MenuStateUpdateMessage.TYPE, MenuStateUpdateMessage.STREAM_CODEC);
 		ServerPlayNetworking.registerGlobalReceiver(MenuStateUpdateMessage.TYPE, MenuStateUpdateMessage::handleMenuState);
 	}

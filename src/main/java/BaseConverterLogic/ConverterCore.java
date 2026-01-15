@@ -6,20 +6,20 @@ import static net.mcreator.basecalculatingmod.BaseCalculatingModMod.ALPHABET;
 
 public class ConverterCore {
 
-    public static String convertFromDecimal(String number, Integer outputBase){
-        //explains.append("\\n");
+    public static String convertFromDecimal(String number, Integer outputBase) {
         int n = Integer.parseInt(number);
+        if (n == 0) return "0"; // <- исправлено
+
         int d;
         StringBuilder outputNumber = new StringBuilder();
         while (n > 0) {
             d = n % outputBase;
             n = n / outputBase;
             outputNumber.append(ALPHABET.charAt(d));
-
-            //explains.append(String.format(""));
         }
         return outputNumber.reverse().toString();
     }
+
 
     public static String convertToDecimal(String number, Integer inputBase){
 

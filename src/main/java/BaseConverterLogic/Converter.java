@@ -2,9 +2,16 @@ package BaseConverterLogic;
 
 public class Converter {
     public static String convert(String number, int inputBase, int outputBase) {
-        if (inputBase ==  10) {
-            return ConverterCore.convertFromDecimal(number, outputBase);
+        boolean fl = false;
+        if (number.startsWith("-")) {
+            fl = true;
+            number = number.substring(1);
         }
-        return  ConverterCore.convertFromDecimal(ConverterCore.convertToDecimal(number, inputBase), outputBase);
+        if (inputBase ==  10) {
+            number = (fl ? "-" : "") + ConverterCore.convertFromDecimal(number, outputBase);
+            return number;
+        }
+        number = (fl ? "-" : "") + ConverterCore.convertFromDecimal(ConverterCore.convertToDecimal(number, inputBase), outputBase);
+        return number;
     }
 }
