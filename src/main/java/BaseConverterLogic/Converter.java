@@ -1,5 +1,7 @@
 package BaseConverterLogic;
 
+import BaseCalculatorLogic.Tokens.NumberWithBase;
+
 public class Converter {
     public static String convert(String number, int inputBase, int outputBase) {
         boolean fl = false;
@@ -14,4 +16,5 @@ public class Converter {
         number = (fl ? "-" : "") + ConverterCore.convertFromDecimal(ConverterCore.convertToDecimal(number, inputBase), outputBase);
         return number;
     }
+
 }

@@ -19,7 +19,6 @@ public class CalculatorCore {
 
         fOperand = toBase(fOperand, currentBase);
         sOperand = toBase(sOperand, currentBase);
-        System.out.println(fOperand.number() + " " + fOperand.scale() + " " + fOperand.base() + " " + sOperand.number() + " " + sOperand.scale() + " " + sOperand.base());
 
         int maxIntLen = Math.max(
                 fOperand.number().length() - fOperand.scale(),

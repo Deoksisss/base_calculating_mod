@@ -15,5 +15,6 @@
   "gui.base_calculating_mod.number_coder_block.coderField": "e: 10@12",
   "gui.base_calculating_mod.number_coder_block.label_cpureprodector_3000_2026": "CPU coder 3000",
   "gui.base_calculating_mod.number_coder_block.button_to_additional": "to additional",
-  "gui.base_calculating_mod.number_coder_block.button_to_reverse": "to reverse"
+  "gui.base_calculating_mod.number_coder_block.button_to_reverse": "to reverse",
+  "item.base_calculating_mod.number_coder": "Number Coder"
 }

@@ -2,6 +2,7 @@ package AltCodeGenerator;
 
 import BaseCalculatorLogic.Tokens.NumberWithBase;
 
+import static tools.NumberNumberWithBaseConverter.toNumber;
 import static tools.NumberNumberWithBaseConverter.toNumberWithBase;
 import static tools.NumberWithBaseTools.toBase;
 
@@ -20,8 +21,6 @@ public class NumberCoder {
         if (isNeg) {
             value = value.substring(1);
         }
-
-
-        return (isNeg ? "1" : "0") + value;
+        return "";
     }
 }

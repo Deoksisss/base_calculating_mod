@@ -1,17 +1,22 @@
 package tools;
 
 import BaseCalculatorLogic.Tokens.NumberWithBase;
-import BaseConverterLogic.Converter;
 
 import static AltCodeGenerator.NumberCoderCore.getAbsFromAltCode;
 import static AltCodeGenerator.NumberCoderCore.toAdditionalCode;
+import static BaseConverterLogic.Converter.convert;
+import static tools.NumberNumberWithBaseConverter.toNumberWithBase;
 
 public class NumberWithBaseTools {
 
     public static NumberWithBase toBase(NumberWithBase number, int currentBase) {
+        String value = number.number();
+        value = value.substring(0, number.scale()) + "," + value.substring(number.scale()+1);
+
+
         return number.base() == currentBase
                 ? number
-                : new NumberWithBase(Converter.convert(number.number(), number.base(), currentBase), number.scale(), currentBase);
+                : toNumberWithBase(convert(value, number.base(), currentBase) + "@" + currentBase);
     }
 
     public static NumberWithBase normalize(NumberWithBase number, int maxScale, int maxIntLen) {
@@ -21,17 +26,14 @@ public class NumberWithBaseTools {
 
         boolean negative = value.charAt(0) == '-';
         if (negative) {
-            value = value.substring(1); // временно убрали минус
+            value = value.substring(1);
         }
 
-        // нормализация дробной части
         value = value + "0".repeat(maxScale - scale);
 
-        // нормализация целой части
         int intLen = value.length() - maxScale;
         value = "0".repeat(maxIntLen - intLen) + value;
 
-        // возвращаем знак
         if (negative) {
             value = "-" + value;
         }

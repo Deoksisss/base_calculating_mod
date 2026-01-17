@@ -8,7 +8,7 @@ public class ConverterCore {
 
     public static String convertFromDecimal(String number, Integer outputBase) {
         int n = Integer.parseInt(number);
-        if (n == 0) return "0"; // <- исправлено
+        if (n == 0) return "0";
 
         int d;
         StringBuilder outputNumber = new StringBuilder();

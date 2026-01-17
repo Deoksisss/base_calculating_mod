@@ -3,6 +3,7 @@
  */
 package net.mcreator.basecalculatingmod.init;
 
+import net.mcreator.basecalculatingmod.block.NumberCoderBlock;
 import net.mcreator.basecalculatingmod.block.CalculatorBlockBlock;
 
 import net.fabricmc.api.Environment;
