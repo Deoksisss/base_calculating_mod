@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "base_calculating_mod:block/number_coder"
+    },
+    "powered=true": {
+      "model": "base_calculating_mod:block/number_coder_down"
+    }
+  }
+}

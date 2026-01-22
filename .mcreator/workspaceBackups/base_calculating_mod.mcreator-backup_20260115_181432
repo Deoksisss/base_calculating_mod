@@ -1,0 +1,186 @@
+{
+  "mod_elements": [
+    {
+      "name": "ConverterBlockGUI",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "converter_block_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/basecalculatingmod/world/inventory/ConverterBlockGUIMenu.java",
+          "src/main/java/net/mcreator/basecalculatingmod/network/ConverterBlockGUIButtonMessage.java",
+          "src/main/java/net/mcreator/basecalculatingmod/client/gui/ConverterBlockGUIScreen.java"
+        ]
+      }
+    },
+    {
+      "name": "ConverterBlock",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "converter_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/base_calculating_mod/loot_table/blocks/converter_block.json",
+          "src/main/resources/assets/base_calculating_mod/models/block/converter_block.json",
+          "src/main/resources/assets/base_calculating_mod/models/item/converter_block.json",
+          "src/main/java/net/mcreator/basecalculatingmod/block/ConverterBlockBlock.java",
+          "src/main/java/net/mcreator/basecalculatingmod/block/entity/ConverterBlockBlockEntity.java",
+          "src/main/resources/assets/base_calculating_mod/items/converter_block.json",
+          "src/main/resources/assets/base_calculating_mod/blockstates/converter_block.json",
+          "src/main/resources/assets/base_calculating_mod/models/block/converter_block_down.json"
+        ]
+      }
+    },
+    {
+      "name": "ConverterBlockCoreProcedure",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "converter_block_core",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/basecalculatingmod/procedures/ConverterBlockCoreProcedureProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "CalculatorBlock",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "calculator_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/base_calculating_mod/items/calculator_block.json",
+          "src/main/resources/assets/base_calculating_mod/models/item/calculator_block.json",
+          "src/main/resources/assets/base_calculating_mod/blockstates/calculator_block.json",
+          "src/main/resources/data/base_calculating_mod/loot_table/blocks/calculator_block.json",
+          "src/main/java/net/mcreator/basecalculatingmod/block/CalculatorBlockBlock.java",
+          "src/main/java/net/mcreator/basecalculatingmod/block/entity/CalculatorBlockBlockEntity.java",
+          "src/main/resources/assets/base_calculating_mod/models/block/calculator_block.json",
+          "src/main/resources/assets/base_calculating_mod/models/block/calculator_block_down.json"
+        ]
+      }
+    },
+    {
+      "name": "CalculatorGUI",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "calculator_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/basecalculatingmod/client/gui/CalculatorGUIScreen.java",
+          "src/main/java/net/mcreator/basecalculatingmod/network/CalculatorGUIButtonMessage.java",
+          "src/main/java/net/mcreator/basecalculatingmod/world/inventory/CalculatorGUIMenu.java"
+        ]
+      }
+    },
+    {
+      "name": "CalculatorBlockCore",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "calculator_block_core",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/basecalculatingmod/procedures/CalculatorBlockCoreProcedure.java"
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "tag_elements": {
+    "BLOCKS:minecraft:pressure_plates": [
+      "~CUSTOM:CalculatorBlock",
+      "~CUSTOM:ConverterBlock"
+    ]
+  },
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {
+      "item.base_calculating_mod.converter_block": "Converter Block",
+      "gui.base_calculating_mod.converter_block_gui.converterFirstBaseSlider_prefix": "",
+      "gui.base_calculating_mod.converter_block_gui.button_convert": "Convert",
+      "gui.base_calculating_mod.converter_block_gui.converterTextField": "enter number",
+      "gui.base_calculating_mod.converter_block_gui.converterFirstBaseSlider_suffix": "",
+      "gui.base_calculating_mod.converter_block_gui.CnoverterSecondBaseSlider_prefix": "",
+      "gui.base_calculating_mod.converter_block_gui.CnoverterSecondBaseSlider_suffix": "",
+      "gui.base_calculating_mod.converter_block_gui.converterSecondBaseSlider_suffix": "",
+      "gui.base_calculating_mod.converter_block_gui.converterSecondBaseSlider_prefix": "",
+      "item.base_calculating_mod.calculator_block": "Calculator Block",
+      "gui.base_calculating_mod.calculator_gui.button_calculate": "Calculate",
+      "gui.base_calculating_mod.calculator_gui.calcField": "e: 10@2+12@10*2@3"
+    }
+  },
+  "metadata": {
+    "files": [
+      "src/main/java/net/mcreator/basecalculatingmod/init/BaseCalculatingModModMenus.java",
+      "src/main/java/net/mcreator/basecalculatingmod/network/MenuStateUpdateMessage.java",
+      "src/main/java/net/mcreator/basecalculatingmod/init/BaseCalculatingModModScreens.java",
+      "src/main/java/net/mcreator/basecalculatingmod/init/BaseCalculatingModModBlocksRenderers.java",
+      "src/main/java/net/mcreator/basecalculatingmod/init/BaseCalculatingModModBlocks.java",
+      "src/main/java/net/mcreator/basecalculatingmod/init/BaseCalculatingModModBlockEntities.java",
+      "src/main/java/net/mcreator/basecalculatingmod/mixin/ServerPlayerMixin.java",
+      "src/main/java/net/mcreator/basecalculatingmod/init/BaseCalculatingModModItems.java",
+      "src/main/java/net/mcreator/basecalculatingmod/mixin/RepairItemRecipeMixin.java",
+      "src/main/java/net/mcreator/basecalculatingmod/BaseCalculatingModMod.java",
+      "src/main/java/net/mcreator/basecalculatingmod/event/BlockEvents.java",
+      "src/main/java/net/mcreator/basecalculatingmod/event/MiscEvents.java",
+      "src/main/java/net/mcreator/basecalculatingmod/mixin/LivingEntityMixin.java",
+      "src/main/resources/fabric.mod.json",
+      "src/main/java/net/mcreator/basecalculatingmod/mixin/PlayerMixin.java",
+      "src/main/java/net/mcreator/basecalculatingmod/mixin/ItemStackMixin.java",
+      "src/main/java/net/mcreator/basecalculatingmod/BaseCalculatingModModClient.java",
+      "src/main/java/net/mcreator/basecalculatingmod/mixin/BoneMealItemMixin.java",
+      "src/main/resources/META-INF/base_calculating_mod.accesswidener",
+      "src/main/java/net/mcreator/basecalculatingmod/event/ItemEvents.java",
+      "src/main/java/net/mcreator/basecalculatingmod/mixin/BlockItemMixin.java",
+      "src/main/java/net/mcreator/basecalculatingmod/event/PlayerEvents.java",
+      "src/main/java/net/mcreator/basecalculatingmod/mixin/CommandsMixin.java",
+      "src/main/java/net/mcreator/basecalculatingmod/event/LivingEntityEvents.java",
+      "src/main/java/net/mcreator/basecalculatingmod/mixin/ExperienceOrbMixin.java",
+      "src/main/resources/pack.mcmeta",
+      "src/main/resources/base_calculating_mod.mixins.json"
+    ]
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "base_calculating_mod",
+    "modName": "Base calculating mod",
+    "version": "1.0.0",
+    "author": "MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Not specified",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "fabric-1.21.8",
+    "modElementsPackage": "net.mcreator.basecalculatingmod"
+  },
+  "mcreatorVersion": 202500345720
+}

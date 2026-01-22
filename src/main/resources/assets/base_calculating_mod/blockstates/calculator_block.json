@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "base_calculating_mod:block/calculator_block"
+    },
+    "powered=true": {
+      "model": "base_calculating_mod:block/calculator_block_down"
+    }
+  }
+}

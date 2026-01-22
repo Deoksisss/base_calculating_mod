@@ -1,0 +1,50 @@
+{
+  "_fv": 79,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "e: 10@2+12@10*2@3",
+          "name": "calcField",
+          "width": 120,
+          "height": 20,
+          "x": 153,
+          "y": 56,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_calculate",
+          "text": "Calculate",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "CalculatorBlockCore"
+          },
+          "width": 72,
+          "height": 20,
+          "x": 177,
+          "y": 89,
+          "locked": false
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

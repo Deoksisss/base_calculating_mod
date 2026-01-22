@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "base_calculating_mod:blocks/number_coder",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "base_calculating_mod:number_coder"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "_fv": 79,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "e: 10@12",
+          "name": "coderField",
+          "width": 120,
+          "height": 20,
+          "x": 153,
+          "y": 49,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_to_direct",
+          "text": "to direct",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "DirectCoder"
+          },
+          "width": 72,
+          "height": 20,
+          "x": 154,
+          "y": 80,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_to_reverse",
+          "text": "to reverse",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ReverseCoder"
+          },
+          "width": 77,
+          "height": 20,
+          "x": 154,
+          "y": 111,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_to_additional",
+          "text": "to additional",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "AdditionalCoder"
+          },
+          "width": 93,
+          "height": 20,
+          "x": 153,
+          "y": 142,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_cpureprodector_3000_2026",
+          "text": {
+            "fixedValue": "CPU coder 3000"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 220,
+          "y": 185,
+          "locked": false
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

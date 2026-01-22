@@ -1,0 +1,8 @@
+{
+  "parent": "block/pressure_plate_up",
+  "textures": {
+    "texture": "minecraft:block/cake_bottom",
+    "particle": "minecraft:block/cake_bottom"
+  },
+  "render_type": "solid"
+}

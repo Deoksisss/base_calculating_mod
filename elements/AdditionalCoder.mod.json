@@ -1,0 +1,8 @@
+{
+  "_fv": 79,
+  "_type": "procedure",
+  "definition": {
+    "procedurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><variables><variable type=\"String\" id=\"number\">number</variable></variables><block type=\"event_trigger\" deletable=\"false\" x=\"40\" y=\"40\"><field name=\"trigger\">no_ext_trigger</field><next><block type=\"variables_set_string\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" is_player_var=\"false\" has_entity=\"false\"></mutation><field name=\"VAR\">local:number</field><value name=\"VAL\"><block type=\"gui_get_text_textfield\"><field name=\"textfield\">coderField</field><value name=\"entity\"><block type=\"entity_from_deps\"></block></value></block></value><next><block type=\"gui_set_text_textfield\"><field name=\"textfield\">coderField</field><value name=\"text\"><block type=\"text\"><field name=\"TEXT\">Text</field></block></value><value name=\"entity\"><block type=\"entity_from_deps\"></block></value><next><block type=\"world_send_chat\"><field name=\"color\">#ff9999</field><field name=\"bold\">FALSE</field><field name=\"italic\">FALSE</field><field name=\"underlined\">FALSE</field><value name=\"text\"><block type=\"text\"><field name=\"TEXT\">Message</field></block></value></block></next></block></next></block></next></block></xml>",
+    "skipDependencyNullCheck": false
+  }
+}
