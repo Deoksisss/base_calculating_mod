@@ -3,7 +3,7 @@ package BaseCalculatorLogic;
 import BaseCalculatorLogic.Tokens.NumberWithBase;
 
 import static AltCodeGenerator.NumberCoderCore.getAbsFromAltCode;
-import static AltCodeGenerator.NumberCoderCore.toAdditionalCode;
+import static AltCodeGenerator.NumberCoderCore.toAltCode;
 import static net.mcreator.basecalculatingmod.BaseCalculatingModMod.ALPHABET;
 import static tools.NumberTools.isNegative;
 import static tools.NumberWithBaseTools.*;
@@ -28,8 +28,8 @@ public class CalculatorCore {
         fOperand = normalize(fOperand, maxScale, maxIntLen+1);
         sOperand = normalize(sOperand, maxScale, maxIntLen+1);
 
-        fOperand = toAdditionalCode(fOperand);
-        sOperand = toAdditionalCode(sOperand);
+        fOperand = toAltCode(fOperand);
+        sOperand = toAltCode(sOperand);
 
         String firstNumber = fOperand.number();
         String secondNumber = sOperand.number();
@@ -53,8 +53,8 @@ public class CalculatorCore {
         NumberWithBase current = new NumberWithBase("0", 0, currentBase);
         NumberWithBase currentNumber;
 
-        fOperand = toAdditionalCode(toBase(fOperand, currentBase));
-        sOperand = toAdditionalCode(toBase(sOperand, currentBase));
+        fOperand = toAltCode(toBase(fOperand, currentBase));
+        sOperand = toAltCode(toBase(sOperand, currentBase));
 
         boolean isNegative = isNegative(fOperand.number(), sOperand.number(), currentBase);
 

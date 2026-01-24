@@ -7,29 +7,71 @@ import static net.mcreator.basecalculatingmod.BaseCalculatingModMod.ALPHABET;
 public class ConverterCore {
 
     public static String convertFromDecimal(String number, Integer outputBase) {
-        int n = Integer.parseInt(number);
-        if (n == 0) return "0";
+        String[] parts = number.split(",");
 
-        int d;
-        StringBuilder outputNumber = new StringBuilder();
-        while (n > 0) {
-            d = n % outputBase;
-            n = n / outputBase;
-            outputNumber.append(ALPHABET.charAt(d));
+        int intPart = Integer.parseInt(parts[0]);
+        double fracPart = (parts.length > 1)
+                ? Double.parseDouble("0." + parts[1])
+                : 0.0;
+
+        // --- целая часть ---
+        StringBuilder intResult = new StringBuilder();
+        if (intPart == 0) {
+            intResult.append("0");
+        } else {
+            while (intPart > 0) {
+                int d = intPart % outputBase;
+                intPart /= outputBase;
+                intResult.append(ALPHABET.charAt(d));
+            }
+            intResult.reverse();
         }
-        return outputNumber.reverse().toString();
+
+        // --- дробная часть ---
+        if (fracPart == 0) {
+            return intResult.toString();
+        }
+
+        StringBuilder fracResult = new StringBuilder();
+        int limit = 5;
+
+        while (fracPart > 0 && fracResult.length() < limit) {
+            fracPart *= outputBase;
+            int digit = (int) fracPart;
+            fracResult.append(ALPHABET.charAt(digit));
+            fracPart -= digit;
+        }
+
+        return intResult + "," + fracResult;
     }
 
 
-    public static String convertToDecimal(String number, Integer inputBase){
+    public static String convertToDecimal(String number, Integer inputBase) {
+        String[] parts = number.split(",");
 
-        int len = number.length()-1;
-        int outputNumber = 0;
-        for (int i = 0; i < number.length(); i++){
-            int currentNumber = ALPHABET.indexOf(number.charAt(i));
-            outputNumber += currentNumber*((int) Math.pow(inputBase, len-i));
+        // --- целая часть ---
+        int intResult = 0;
+        String intPart = parts[0];
+        int power = intPart.length() - 1;
+
+        for (int i = 0; i < intPart.length(); i++) {
+            int digit = ALPHABET.indexOf(intPart.charAt(i));
+            intResult += digit * Math.pow(inputBase, power--);
         }
 
-        return String.valueOf(outputNumber);
+        // --- дробная часть ---
+        double fracResult = 0.0;
+        if (parts.length > 1) {
+            String fracPart = parts[1];
+            for (int i = 0; i < fracPart.length(); i++) {
+                int digit = ALPHABET.indexOf(fracPart.charAt(i));
+                fracResult += digit * Math.pow(inputBase, -(i + 1));
+            }
+        }
+
+        // ограничиваем до 5 знаков
+        double result = intResult + fracResult;
+        return String.format(java.util.Locale.US, "%.5f", result)
+                .replaceAll("\\.?0+$", "");
     }
 }

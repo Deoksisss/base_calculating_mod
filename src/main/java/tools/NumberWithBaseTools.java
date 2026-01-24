@@ -3,21 +3,45 @@ package tools;
 import BaseCalculatorLogic.Tokens.NumberWithBase;
 
 import static AltCodeGenerator.NumberCoderCore.getAbsFromAltCode;
-import static AltCodeGenerator.NumberCoderCore.toAdditionalCode;
+import static AltCodeGenerator.NumberCoderCore.toAltCode;
 import static BaseConverterLogic.Converter.convert;
 import static tools.NumberNumberWithBaseConverter.toNumberWithBase;
 
 public class NumberWithBaseTools {
 
-    public static NumberWithBase toBase(NumberWithBase number, int currentBase) {
-        String value = number.number();
-        value = value.substring(0, number.scale()) + "," + value.substring(number.scale()+1);
+    public static NumberWithBase toBase(NumberWithBase number, int targetBase) {
 
+        // если система уже нужная — просто возвращаем
+        if (number.base() == targetBase) {
+            return number;
+        }
 
-        return number.base() == currentBase
-                ? number
-                : toNumberWithBase(convert(value, number.base(), currentBase) + "@" + currentBase);
+        String raw = number.number();
+        int scale = number.scale();
+
+        // восстановление числа с запятой
+        String value;
+        if (scale == 0) {
+            // целое число
+            value = raw;
+        } else {
+            int split = raw.length() - scale;
+
+            if (split <= 0) {
+                // число вида 0,00...X
+                value = "0," + "0".repeat(-split) + raw;
+            } else {
+                value = raw.substring(0, split) + "," + raw.substring(split);
+            }
+        }
+
+        // конвертация системы счисления
+        String converted = convert(value, number.base(), targetBase);
+
+        // упаковка обратно в NumberWithBase
+        return toNumberWithBase(converted + "@" + targetBase);
     }
+
 
     public static NumberWithBase normalize(NumberWithBase number, int maxScale, int maxIntLen) {
         String value = number.number();
@@ -43,7 +67,7 @@ public class NumberWithBaseTools {
 
 
     public static NumberWithBase negate(NumberWithBase number) {
-        return toAdditionalCode(
+        return toAltCode(
                 new NumberWithBase(
                         "-" + getAbsFromAltCode(number.number(), number.base()),
                         number.scale(),
