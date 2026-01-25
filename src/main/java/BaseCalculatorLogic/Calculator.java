@@ -2,7 +2,6 @@ package BaseCalculatorLogic;
 
 import BaseCalculatorLogic.Tokens.*;
 
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,17 +14,18 @@ import static tools.NumberNumberWithBaseConverter.toNumber;
 
 public class Calculator {
 
-    public static String calculate(String expression) {
+    public static String calculate(String expression, StringBuilder out) {
+        out.append("Начнём работу с выражением ").append(expression).append("\n\n");
         List<Token> tokens = tokenizeExpression(expression);
         List<Token> firstRound = new ArrayList<>();
         for (int i = 0; i < tokens.size(); i++) {
             Token token = tokens.get(i);
 
-            if (token instanceof OperatorToken opToken && opToken.getOperator() == Operator.MUL) {
+            if (token instanceof OperatorToken(Operator operator) && operator == Operator.MUL) {
                 NumberToken left = (NumberToken) firstRound.removeLast();
                 NumberToken right = (NumberToken) tokens.get(++i);
 
-                NumberWithBase result = multiply(left.getNumber(),right.getNumber());
+                NumberWithBase result = multiply(left.number(),right.number(), out);
 
                 firstRound.add(new NumberToken(result));
             } else {
@@ -37,12 +37,12 @@ public class Calculator {
         OperatorToken pendingOp = null;
 
         for (Token token : firstRound) {
-            if (token instanceof NumberToken numToken) {
+            if (token instanceof NumberToken(NumberWithBase number)) {
                 if (result == null) {
-                    result = numToken.getNumber();
+                    result = number;
                 } else if (pendingOp != null) {
-                    if (pendingOp.getOperator() == Operator.ADD) {
-                        result = sum(result, numToken.getNumber());
+                    if (pendingOp.operator() == Operator.ADD) {
+                        result = sum(result, number, out);
                     }
                     pendingOp = null;
                 }

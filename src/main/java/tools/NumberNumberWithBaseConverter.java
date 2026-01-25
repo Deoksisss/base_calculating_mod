@@ -64,8 +64,9 @@ public class NumberNumberWithBaseConverter {
     }
 
     public static NumberWithBase toNumberWithBase(String inputNumber) {
-
+        System.out.println("Trying to convert " + inputNumber);
         if (!(isValid(inputNumber))) {
+            System.out.println("error in validation");
             throw new NumberFormatException("");
         }
 

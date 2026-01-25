@@ -10,10 +10,10 @@ public class Tokenizer {
         expression = expression.replaceAll("(?<!\\*)-", "+-");
         List<Token> tokens = new ArrayList<>();
         String[] multiLevel = expression.split("(?=[*+])|(?<=[*+])");
-        for (int i = 0; i < multiLevel.length; i++) {
-            if (multiLevel[i].isEmpty()) continue;
+        for (String s : multiLevel) {
+            if (s.isEmpty()) continue;
 
-            switch (multiLevel[i]) {
+            switch (s) {
                 case "*":
                     tokens.add(new OperatorToken(Operator.MUL));
                     break;
@@ -21,7 +21,7 @@ public class Tokenizer {
                     tokens.add(new OperatorToken(Operator.ADD));
                     break;
                 default:
-                    tokens.add(new NumberToken(toNumberWithBase(multiLevel[i])));
+                    tokens.add(new NumberToken(toNumberWithBase(s)));
             }
         }
         return tokens;

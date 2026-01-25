@@ -38,7 +38,7 @@ public record CalculatorGUIButtonMessage(int buttonID, int x, int y, int z) impl
 			return;
 		if (buttonID == 0) {
 
-			CalculatorBlockCoreProcedure.execute(entity);
+			CalculatorBlockCoreProcedure.execute(world, entity);
 		}
 	}
 }

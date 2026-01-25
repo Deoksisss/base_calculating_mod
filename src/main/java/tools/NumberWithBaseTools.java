@@ -9,9 +9,8 @@ import static tools.NumberNumberWithBaseConverter.toNumberWithBase;
 
 public class NumberWithBaseTools {
 
-    public static NumberWithBase toBase(NumberWithBase number, int targetBase) {
-
-        // если система уже нужная — просто возвращаем
+    public static NumberWithBase toBase(NumberWithBase number, int targetBase, StringBuilder out) {
+        System.out.println("я принял на вход:" + number);
         if (number.base() == targetBase) {
             return number;
         }
@@ -19,26 +18,21 @@ public class NumberWithBaseTools {
         String raw = number.number();
         int scale = number.scale();
 
-        // восстановление числа с запятой
         String value;
         if (scale == 0) {
-            // целое число
             value = raw;
         } else {
             int split = raw.length() - scale;
 
             if (split <= 0) {
-                // число вида 0,00...X
                 value = "0," + "0".repeat(-split) + raw;
             } else {
                 value = raw.substring(0, split) + "," + raw.substring(split);
             }
         }
-
-        // конвертация системы счисления
-        String converted = convert(value, number.base(), targetBase);
-
-        // упаковка обратно в NumberWithBase
+        System.out.println("Сейчас я выдаю " + value);
+        String converted = convert(value, number.base(), targetBase, out);
+        System.out.println("Я выдаю "+ converted);
         return toNumberWithBase(converted + "@" + targetBase);
     }
 

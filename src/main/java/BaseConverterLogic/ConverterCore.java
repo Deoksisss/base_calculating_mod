@@ -1,12 +1,11 @@
 package BaseConverterLogic;
 
-import net.mcreator.basecalculatingmod.BaseCalculatingModMod;
 
 import static net.mcreator.basecalculatingmod.BaseCalculatingModMod.ALPHABET;
 
 public class ConverterCore {
 
-    public static String convertFromDecimal(String number, Integer outputBase) {
+    public static String convertFromDecimal(String number, Integer outputBase, StringBuilder out) {
         String[] parts = number.split(",");
 
         int intPart = Integer.parseInt(parts[0]);
@@ -46,10 +45,9 @@ public class ConverterCore {
     }
 
 
-    public static String convertToDecimal(String number, Integer inputBase) {
+    public static String convertToDecimal(String number, Integer inputBase, StringBuilder out) {
         String[] parts = number.split(",");
 
-        // --- целая часть ---
         int intResult = 0;
         String intPart = parts[0];
         int power = intPart.length() - 1;
@@ -59,7 +57,6 @@ public class ConverterCore {
             intResult += digit * Math.pow(inputBase, power--);
         }
 
-        // --- дробная часть ---
         double fracResult = 0.0;
         if (parts.length > 1) {
             String fracPart = parts[1];
@@ -68,10 +65,8 @@ public class ConverterCore {
                 fracResult += digit * Math.pow(inputBase, -(i + 1));
             }
         }
-
-        // ограничиваем до 5 знаков
         double result = intResult + fracResult;
-        return String.format(java.util.Locale.US, "%.5f", result)
+        return String.format("%,5f", result)
                 .replaceAll("\\.?0+$", "");
     }
 }
