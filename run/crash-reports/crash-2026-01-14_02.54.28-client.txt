@@ -5,8 +5,8 @@ Time: 2026-01-14 02:54:28
 Description: mouseClicked event handler
 
 java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
-	at knot//BaseCalculatorLogic.Tokens.Tokenizer.tokenizeExpression(Tokenizer.java:14)
-	at knot//BaseCalculatorLogic.Calculator.calculate(Calculator.java:17)
+	at knot//Tokens.Tokenizer.tokenizeExpression(Tokenizer.java:14)
+	at knot//APIs.Calculator.calculate(Calculator.java:17)
 	at knot//net.mcreator.basecalculatingmod.procedures.CalculatorBlockCoreProcedure.execute(CalculatorBlockCoreProcedure.java:19)
 	at knot//net.mcreator.basecalculatingmod.network.CalculatorGUIButtonMessage.handleButtonAction(CalculatorGUIButtonMessage.java:41)
 	at knot//net.mcreator.basecalculatingmod.client.gui.CalculatorGUIScreen.lambda$init$1(CalculatorGUIScreen.java:102)
@@ -42,8 +42,8 @@ A detailed walkthrough of the error, its code path and all known details is as f
 -- Head --
 Thread: Render thread
 Stacktrace:
-	at knot//BaseCalculatorLogic.Tokens.Tokenizer.tokenizeExpression(Tokenizer.java:14)
-	at knot//BaseCalculatorLogic.Calculator.calculate(Calculator.java:17)
+	at knot//Tokens.Tokenizer.tokenizeExpression(Tokenizer.java:14)
+	at knot//APIs.Calculator.calculate(Calculator.java:17)
 	at knot//net.mcreator.basecalculatingmod.procedures.CalculatorBlockCoreProcedure.execute(CalculatorBlockCoreProcedure.java:19)
 	at knot//net.mcreator.basecalculatingmod.network.CalculatorGUIButtonMessage.handleButtonAction(CalculatorGUIButtonMessage.java:41)
 	at knot//net.mcreator.basecalculatingmod.client.gui.CalculatorGUIScreen.lambda$init$1(CalculatorGUIScreen.java:102)

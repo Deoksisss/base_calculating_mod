@@ -8,7 +8,7 @@ import net.minecraft.network.chat.Component;
 
 import net.mcreator.basecalculatingmod.init.BaseCalculatingModModMenus;
 
-import static AltCodeGenerator.NumberCoder.toAdditionalCode;
+import static APIs.NumberCoder.toAdditionalCode;
 
 public class AdditionalCoderProcedure {
 	public static boolean eventResult = true;

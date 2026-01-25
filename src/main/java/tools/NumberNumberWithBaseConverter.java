@@ -1,6 +1,6 @@
 package tools;
 
-import BaseCalculatorLogic.Tokens.NumberWithBase;
+import Tokens.NumberWithBase;
 
 import static net.mcreator.basecalculatingmod.BaseCalculatingModMod.ALPHABET;
 

@@ -8,7 +8,7 @@ import net.minecraft.network.chat.Component;
 
 import net.mcreator.basecalculatingmod.init.BaseCalculatingModModMenus;
 
-import static AltCodeGenerator.NumberCoder.toDirect;
+import static APIs.NumberCoder.toDirect;
 
 public class DirectCoderProcedure {
 	public static boolean eventResult = true;

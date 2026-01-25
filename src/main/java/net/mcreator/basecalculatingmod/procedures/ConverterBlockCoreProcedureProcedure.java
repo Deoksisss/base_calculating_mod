@@ -8,7 +8,7 @@ import net.minecraft.network.chat.Component;
 
 import net.mcreator.basecalculatingmod.init.BaseCalculatingModModMenus;
 
-import static BaseConverterLogic.Converter.convert;
+import static APIs.Converter.convert;
 
 public class ConverterBlockCoreProcedureProcedure {
 	public static boolean eventResult = true;
