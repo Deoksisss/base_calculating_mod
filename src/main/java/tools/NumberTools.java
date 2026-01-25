@@ -4,11 +4,6 @@ import static net.mcreator.basecalculatingmod.BaseCalculatingModMod.ALPHABET;
 
 public class NumberTools {
 
-    public static boolean isNegative(String firstNumber, String secondNumber, int base) {
-        boolean isFirstNumberNegative = (ALPHABET.indexOf(firstNumber.charAt(0)) >= base/2);
-        boolean isSecondNumberNegative = (ALPHABET.indexOf(secondNumber.charAt(0)) >= base/2);
-        return isFirstNumberNegative ^ isSecondNumberNegative;
-    }
 
     public static String inverse(String number, int base) {
         char altChar;

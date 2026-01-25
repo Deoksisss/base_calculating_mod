@@ -24,7 +24,7 @@ public class DirectCoderProcedure {
 				_menu.sendMenuStateUpdate(_player, 0, "coderField", toDirect(number, out), true);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 		if (world instanceof ServerLevel _level) {
 			_level.getServer().getPlayerList().broadcastSystemMessage(Component.literal(out.toString()).withColor(0xff9999), false);

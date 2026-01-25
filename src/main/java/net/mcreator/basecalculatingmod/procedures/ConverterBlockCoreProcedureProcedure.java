@@ -23,9 +23,12 @@ public class ConverterBlockCoreProcedureProcedure {
 		inputNumber = (entity instanceof Player _entity0 && _entity0.containerMenu instanceof BaseCalculatingModModMenus.MenuAccessor _menu0) ? _menu0.getMenuState(0, "converterTextField", "") : "";
 		inputBase = (entity instanceof Player _entity1 && _entity1.containerMenu instanceof BaseCalculatingModModMenus.MenuAccessor _menu1) ? _menu1.getMenuState(2, "converterFirstBaseSlider", 0.0) : 0.0;
 		outputBase = (entity instanceof Player _entity2 && _entity2.containerMenu instanceof BaseCalculatingModModMenus.MenuAccessor _menu2) ? _menu2.getMenuState(2, "converterSecondBaseSlider", 0.0) : 0.0;
-		String outputNumber = convert(inputNumber, (int) inputBase, (int) outputBase, out);
-		if (entity instanceof Player _player && _player.containerMenu instanceof BaseCalculatingModModMenus.MenuAccessor _menu) {
-			_menu.sendMenuStateUpdate(_player, 0, "converterTextField", outputNumber, true);
+		try {
+			if (entity instanceof Player _player && _player.containerMenu instanceof BaseCalculatingModModMenus.MenuAccessor _menu) {
+				_menu.sendMenuStateUpdate(_player, 0, "converterTextField", convert(inputNumber, (int) inputBase, (int) outputBase, out), true);
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
 		}
 		if (world instanceof ServerLevel _level) {
 			_level.getServer().getPlayerList().broadcastSystemMessage(Component.literal(out.toString()).withColor(0xcccccc), false);

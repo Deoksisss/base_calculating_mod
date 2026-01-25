@@ -6,7 +6,7 @@ import static net.mcreator.basecalculatingmod.BaseCalculatingModMod.ALPHABET;
 
 public class NumberNumberWithBaseConverter {
 
-    private static boolean isValid(String number) {
+    public static boolean isValid(String number) {
         int atIndex = number.indexOf('@');
         if (atIndex == -1 || number.indexOf('@', atIndex +1) != -1) {
             return false;
@@ -64,7 +64,6 @@ public class NumberNumberWithBaseConverter {
     }
 
     public static NumberWithBase toNumberWithBase(String inputNumber) {
-        System.out.println("Trying to convert " + inputNumber);
         if (!(isValid(inputNumber))) {
             System.out.println("error in validation");
             throw new NumberFormatException("");

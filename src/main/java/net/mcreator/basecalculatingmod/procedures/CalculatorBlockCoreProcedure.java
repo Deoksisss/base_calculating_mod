@@ -24,7 +24,7 @@ public class CalculatorBlockCoreProcedure {
 				_menu.sendMenuStateUpdate(_player, 0, "calcField", calculate(expression, out), true);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 		if (world instanceof ServerLevel _level) {
 			_level.getServer().getPlayerList().broadcastSystemMessage(Component.literal(out.toString()), false);
