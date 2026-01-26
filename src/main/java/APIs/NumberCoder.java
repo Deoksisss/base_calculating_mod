@@ -1,8 +1,8 @@
-package AltCodeGenerator;
+package APIs;
 
-import BaseCalculatorLogic.Tokens.NumberWithBase;
+import Tokens.NumberWithBase;
 
-import static BaseCalculatorLogic.Calculator.calculate;
+import static APIs.Calculator.calculate;
 import static tools.NumberNumberWithBaseConverter.toNumberWithBase;
 import static tools.NumberTools.inverse;
 import static tools.NumberWithBaseTools.toBase;
@@ -53,7 +53,7 @@ public class NumberCoder {
 
     public static String toAdditionalCode(String inputNumber, StringBuilder out) {
         out.append("\n\nЧтобы получить дополнительный код числа, нужно просто прибавить 1 к обратному коду числа. Поэтому сначала получим обратный код числа.\n\n");
-        String ac = calculate(toReverseCode(inputNumber, out)+"@2+1@2", out);
+        String ac = calculate(toReverseCode(inputNumber, out)+"@2+1@2", out, out);
         String res = ac.substring(0, ac.length()-2);
         out.append("Получим дополнительынй код числа: ").append(res);
         return res;

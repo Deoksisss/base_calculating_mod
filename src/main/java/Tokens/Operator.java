@@ -1,4 +1,4 @@
-package BaseCalculatorLogic.Tokens;
+package Tokens;
 
 public enum Operator {
     ADD, MUL

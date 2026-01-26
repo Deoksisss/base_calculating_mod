@@ -1,4 +1,4 @@
-package BaseCalculatorLogic.Tokens;
+package Tokens;
 
 public record NumberToken(NumberWithBase number) implements Token {
 }

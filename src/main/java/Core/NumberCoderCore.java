@@ -1,6 +1,6 @@
-package AltCodeGenerator;
+package Core;
 
-import BaseCalculatorLogic.Tokens.NumberWithBase;
+import Tokens.NumberWithBase;
 
 import static net.mcreator.basecalculatingmod.BaseCalculatingModMod.ALPHABET;
 import static tools.NumberTools.addOne;

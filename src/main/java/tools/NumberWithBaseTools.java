@@ -1,10 +1,10 @@
 package tools;
 
-import BaseCalculatorLogic.Tokens.NumberWithBase;
+import Tokens.NumberWithBase;
 
-import static AltCodeGenerator.NumberCoderCore.getAbsFromAltCode;
-import static AltCodeGenerator.NumberCoderCore.toAltCode;
-import static BaseConverterLogic.Converter.convert;
+import static Core.NumberCoderCore.getAbsFromAltCode;
+import static Core.NumberCoderCore.toAltCode;
+import static APIs.Converter.convert;
 import static tools.NumberNumberWithBaseConverter.toNumberWithBase;
 
 public class NumberWithBaseTools {

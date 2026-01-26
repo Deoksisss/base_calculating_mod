@@ -1,4 +1,4 @@
-package BaseCalculatorLogic.Tokens;
+package Tokens;
 
 import java.util.ArrayList;
 import java.util.List;

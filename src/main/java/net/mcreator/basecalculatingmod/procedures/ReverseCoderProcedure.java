@@ -8,7 +8,7 @@ import net.minecraft.network.chat.Component;
 
 import net.mcreator.basecalculatingmod.init.BaseCalculatingModModMenus;
 
-import static AltCodeGenerator.NumberCoder.toReverseCode;
+import static APIs.NumberCoder.toReverseCode;
 
 public class ReverseCoderProcedure {
 	public static boolean eventResult = true;

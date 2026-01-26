@@ -1,15 +1,15 @@
-package BaseCalculatorLogic;
+package Core;
 
-import BaseCalculatorLogic.Tokens.NumberWithBase;
+import Tokens.NumberWithBase;
 
-import static AltCodeGenerator.NumberCoderCore.toAltCode;
+import static Core.NumberCoderCore.toAltCode;
 import static net.mcreator.basecalculatingmod.BaseCalculatingModMod.ALPHABET;
 import static tools.NumberNumberWithBaseConverter.toNumber;
 import static tools.NumberWithBaseTools.*;
 
 public class CalculatorCore {
 
-    public static NumberWithBase sum(NumberWithBase fOperand, NumberWithBase sOperand, StringBuilder out) {
+    public static NumberWithBase sum(NumberWithBase fOperand, NumberWithBase sOperand, StringBuilder out, StringBuilder trash) {
 
         int carry = 0;
         int s, f, d;
@@ -19,8 +19,8 @@ public class CalculatorCore {
         out.append("Складываем ").append(fOperand.number()).append(" в ").append(fOperand.base()).append(" системе с ").append(sOperand.number()).append(" в ").append(sOperand.base()).append(" системе\n\n");
         out.append("Переведём числа в общую систему счисления.\n");
 
-        fOperand = toBase(fOperand, currentBase, out);
-        sOperand = toBase(sOperand, currentBase, out);
+        fOperand = toBase(fOperand, currentBase, trash);
+        sOperand = toBase(sOperand, currentBase, trash);
 
 
         int maxIntLen = Math.max(
@@ -54,7 +54,7 @@ public class CalculatorCore {
         return new NumberWithBase(res, maxScale, currentBase);
     }
 
-    public static NumberWithBase multiply(NumberWithBase fOperand, NumberWithBase sOperand, StringBuilder out) {
+    public static NumberWithBase multiply(NumberWithBase fOperand, NumberWithBase sOperand, StringBuilder out, StringBuilder trash) {
         int s, f, d;
         int currentBase = Math.max(fOperand.base(), sOperand.base());
 
@@ -68,8 +68,8 @@ public class CalculatorCore {
         out.append("Проверим число на отрицательность: первое ").append(fIsNegative ? "отрицательное " : "положительное").append(", второе ").append(sIsNegative ? "отрицательное" : "положительное").append(". Соответственно итоговое число ").append(isNegative ? "отрицательное." : "положительное.\n\n");
         out.append("Переведём числа в общую систему.\n");
 
-        fOperand = toBase(fOperand, currentBase, out);
-        sOperand = toBase(sOperand, currentBase, out);
+        fOperand = toBase(fOperand, currentBase, trash);
+        sOperand = toBase(sOperand, currentBase, trash);
 
          String firstNumber = fIsNegative ? fOperand.number().substring(1) : fOperand.number();
          String secondNumber = sIsNegative ? sOperand.number().substring(1) : sOperand.number();
@@ -94,7 +94,7 @@ public class CalculatorCore {
             }
             String currentString = sb.reverse().append("0".repeat(i-1)).toString();
             currentNumber = new NumberWithBase(currentString, fOperand.scale()+sOperand.scale(), currentBase);
-            current = sum(currentNumber, current, out);
+            current = sum(currentNumber, current, out, trash);
             out.append("\n В результате умножение на одно из цифр второго числа получим ").append(currentString).append(". Теперь сложим его с суммой умножений на предыдущие числа: ").append(current.number()).append("\n\n");
 
         }

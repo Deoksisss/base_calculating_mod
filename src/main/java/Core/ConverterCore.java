@@ -1,4 +1,4 @@
-package BaseConverterLogic;
+package Core;
 
 import static net.mcreator.basecalculatingmod.BaseCalculatingModMod.ALPHABET;
 
